@@ -1,4 +1,4 @@
-import axios from 'axios';
+/*import axios from 'axios';
 import type { Note, CreateNewNote } from '@/types/note';
 
 export interface FetchNotesParams {
@@ -45,3 +45,4 @@ export const deleteNote = async (noteId: Note['id']): Promise<Note> => {
   const { data } = await axios.delete<Note>(`/notes/${noteId}`);
   return data;
 };
+*/
