@@ -32,13 +32,3 @@ export const fetchNoteById = async (noteId: Note['id']): Promise<Note> => {
   const { data } = await api.get<Note>(`/notes/${noteId}`);
   return data;
 };
-
-export const createNewNote = async (payload: CreateNewNote): Promise<Note> => {
-  const { data } = await api.post<Note>('/notes', payload);
-  return data;
-};
-
-export const deleteNote = async (noteId: Note['id']): Promise<Note> => {
-  const { data } = await api.delete<Note>(`/notes/${noteId}`);
-  return data;
-};
