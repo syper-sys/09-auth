@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import css from '@/components/AuthNavigation/AuthNavigation.module.css';
 import Link from 'next/link';
 import { useDraftStore } from '@/lib/store/userStore';
-import {useRouter} from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { logout } from '@/lib/api/clientApi';
 
 function AuthNavigation() {
@@ -23,14 +23,16 @@ function AuthNavigation() {
   return isAuthenticated ? (
     <>
       <li className={css.navigationItem}>
-        <p className={css.userEmail}>{draft?.email}</p>
-        <button onClick={handleLogout} className={css.logoutButton}>Logout</button>
-      </li>
-
-      <li className={css.navigationItem}>
         <Link href="/profile" className={css.navigationLink}>
           Profile
         </Link>
+      </li>
+
+      <li className={css.navigationItem}>
+        <p className={css.userEmail}>{draft?.email}</p>
+        <button onClick={handleLogout} className={css.logoutButton}>
+          Logout
+        </button>
       </li>
     </>
   ) : (
