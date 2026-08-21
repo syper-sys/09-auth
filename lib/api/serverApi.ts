@@ -17,22 +17,31 @@ export interface FetchNotesResponse {
 }
 
 export const fetchNotes = async (params: FetchNotesParams = {}): Promise<FetchNotesResponse> => {
+  const cookieStore = await cookies();
   const { page = 1, perPage = 12, search = '', tag } = params;
-
-  const { data } = await api.get<FetchNotesResponse>('/notes', {
+  const response = await api.get<FetchNotesResponse>('/notes', {
     params: {
       page,
       perPage,
       search,
       ...(tag && { tag }),
     },
+    
+    headers: {
+      Cookie: cookieStore.toString(),
+    },
   });
-  return data;
+  return response.data;
 };
 
 export const fetchNoteById = async (noteId: Note['id']): Promise<Note> => {
-  const { data } = await api.get<Note>(`/notes/${noteId}`);
-  return data;
+  const cookieStore = await cookies();
+  const response = await api.get<Note>(`/notes/${noteId}`, {
+    headers: {
+      Cookie: cookieStore.toString(),
+    },
+  });
+  return response.data;
 };
 
 export const checkSession = async () => {
@@ -47,11 +56,11 @@ export const checkSession = async () => {
 
 export const getMe = async (): Promise<User> => {
   const cookieStore = await cookies();
-  const { data } = await api.get('/users/me', {
+  const response = await api.get('/users/me', {
     headers: {
       Cookie: cookieStore.toString(),
     },
   });
-  return data;
+  return response.data;
 };
 
