@@ -22,7 +22,7 @@ function SignUp() {
       const res = await register(formValues);
 
       if (res) {
-        setUser(formValues);
+        setUser(res);
         setIsAuthenticated(true);
         router.push('/profile');
       } else {
