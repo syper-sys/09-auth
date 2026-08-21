@@ -23,7 +23,7 @@ function SignIn() {
       const res = await login(formValues);
 
       if (res) {
-        setUser(formValues);
+        setUser(res);
         setIsAuthenticated(true);
         router.push('/profile');
       } else {
