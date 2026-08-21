@@ -74,8 +74,7 @@ export const getMe = async (): Promise<User> => {
 };
 
 export const logout = async (): Promise<void> => {
-  const { data } = await api.post<void>('/auth/logout');
-  return data;
+  await api.post<void>('/auth/logout');
 };
 
 export const updateMe = async (params: UpdateMeParams): Promise<User> => {

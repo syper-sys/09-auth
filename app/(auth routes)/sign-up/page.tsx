@@ -6,10 +6,10 @@ import { useRouter } from 'next/navigation';
 import { register } from '@/lib/api/clientApi';
 import type { UserValues } from '@/lib/api/clientApi';
 import { ApiError } from '@/app/api/api';
-import { useDraftStore } from '@/lib/store/authStore';
+import { useAuthStore } from '@/lib/store/authStore';
 
 function SignUp() {
-  const { setUser, setIsAuthenticated } = useDraftStore();
+  const { setUser, setIsAuthenticated } = useAuthStore();
   const router = useRouter();
   const [error, setError] = useState('');
   const handleSubmit = async (formData: FormData) => {

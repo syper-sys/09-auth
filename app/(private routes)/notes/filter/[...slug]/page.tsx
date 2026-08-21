@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { fetchNotes } from '../../../../../lib/api/clientApi';
+import { fetchNotes } from '../../../../../lib/api/serverApi';
 import { QueryClient, HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import NotesClient from './Notes.client';
 

@@ -1,7 +1,7 @@
 'use client'
 
 import css from '@/app/(private routes)/profile/edit/page.module.css';
-import { useDraftStore } from '@/lib/store/authStore';
+import { useAuthStore } from '@/lib/store/authStore';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ import { updateMe } from '@/lib/api/clientApi';
 
 function ProfileEditor() {
   const router = useRouter();
-  const { user, setUser } = useDraftStore();
+  const { user, setUser } = useAuthStore();
 
   // Локальний стан для поля редагування
   const [username, setUsername] = useState(user?.username || '');
