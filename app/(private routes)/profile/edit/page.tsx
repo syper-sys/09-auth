@@ -1,7 +1,7 @@
 'use client'
 
 import css from '@/app/(private routes)/profile/edit/page.module.css';
-import { useDraftStore } from '@/lib/store/userStore';
+import { useDraftStore } from '@/lib/store/authStore';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';

@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { login } from '@/lib/api/clientApi';
 import type { UserValues } from '@/lib/api/clientApi';
 import { ApiError } from '@/app/api/api';
-import { useDraftStore } from '@/lib/store/userStore';
+import { useDraftStore } from '@/lib/store/authStore';
 
 function SignIn() {
   const { setUser, setIsAuthenticated } = useDraftStore();

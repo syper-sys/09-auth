@@ -1,7 +1,7 @@
 'use client';
 
 import { checkSession, getMe } from '@/lib/api/clientApi';
-import { useDraftStore } from '@/lib/store/userStore';
+import { useDraftStore } from '@/lib/store/authStore';
 import { useEffect } from 'react';
 
 type Props = {
