@@ -1,4 +1,5 @@
 import css from '@/components/Header/Header.module.css';
+import AuthNavigation from '@/components/AuthNavigation/AuthNavigation';
 import Link from 'next/link';
 
 function Header() {
@@ -15,6 +16,7 @@ function Header() {
           <li>
             <Link href="/notes/filter/all">Notes</Link>
           </li>
+          <AuthNavigation />
         </ul>
       </nav>
     </header>
